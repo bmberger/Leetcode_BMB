@@ -16,8 +16,7 @@ S and J will consist of letters and have length at most 50.
 The characters in J are distinct.
 */
 
-class Solution {
-    func numJewelsInStones(_ J: String, _ S: String) -> Int {
+func numJewelsInStones(_ J: String, _ S: String) -> Int {
         var count = 0
         for j in J.characters.indices 
         {
@@ -31,4 +30,3 @@ class Solution {
         }
         return count
     }
-}
