@@ -34,3 +34,23 @@ for (int i = 0; i < len; i++) {
     print(nums[i]);
 }
 */
+class Solution {
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        guard nums.count > 1 else {
+            return nums.count
+        }  
+         
+        var newestUniqueNumber = nums.first!
+        var currentUniqueIndex = 1 
+        for i in 1..<nums.count {
+            let num = nums[i]
+            if num != newestUniqueNumber {
+                nums.swapAt(i, currentUniqueIndex)
+                currentUniqueIndex += 1
+                newestUniqueNumber = num
+            }  
+        }
+        
+        return currentUniqueIndex
+    }
+}
